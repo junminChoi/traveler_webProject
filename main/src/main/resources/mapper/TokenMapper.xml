@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.traveler.main.mapper.TokenMapper">
+	
+	<!-- 토큰 저장 -->
+	<insert id="saveToken" parameterType="TokenInfoVo">
+		INSERT INTO LogoutToken (userEmail, token)
+		VALUES (#{userEmail}, #{token})
+	</insert>
+	
+	<!-- 토큰 삭제 -->
+	<delete id="removeToken" parameterType="String">
+		DELETE FROM LogoutToken
+		WHERE userEmail = #{userEmail}
+	</delete>
+	
+	<!-- 토큰 체크 -->
+	<select id="checkToken" parameterType="TokenInfoVo" resultType="int">
+		SELECT COUNT(*) FROM LogoutToken
+		WHERE userEmail = #{userEmail} AND token = #{token}
+	</select>
+	
+</mapper>
