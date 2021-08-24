@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.traveler.main.mapper.user.UserMapper">
+	
+	<!-- 회원가입 -->
+	<insert id="signUp" parameterType="UserVo">
+		INSERT INTO Members (userEmail, userNickName, userPW)
+		VALUES (#{userEmail}, #{userNickName}, #{userPW})
+	</insert>
+	
+	<!-- 유저 정보 조회 -->
+	<select id="userInfo" parameterType="String" resultType="UserVo">
+		SELECT * FROM Members
+		WHERE userEmail = #{userEmail}
+	</select>
+	
+</mapper>

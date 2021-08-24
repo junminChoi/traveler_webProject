@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.traveler.main.mapper.AuthMailMapper">
+
+	<!-- 인증번호 임시저장 -->
+	<insert id="saveCertifyKey" parameterType="CertifyKeyVo">
+		INSERT INTO CertificationEmail (userEmail, certifyKey, tempTime)
+		VALUES (#{userEmail}, #{certifyKey}, NOW())
+	</insert>
+	
+	<!-- 인증번호 업데이트 -->
+	<!-- <update id="updateCertifykey" parameterType="CertifyKeyVo">
+		UPDATE certificationEmail
+		SET certifyKey = #{certifyKey}, tempTime = NOW()
+		WHERE userEmail = #{userEmail}
+	</update> -->
+	
+	<!-- 인증번호 유효성 체크 (시간 유효성 O) -->
+	<select id="validateTimeCertifyKey" parameterType="CertifyKeyVo" resultType="int">
+	<![CDATA[
+		SELECT COUNT(*) FROM CertificationEmail
+		WHERE userEmail = #{userEmail}
+		AND certifyKey = #{certifyKey} 
+		AND ABS(TIMESTAMPDIFF(MINUTE, NOW(), tempTime)) < 5
+	]]>
+	</select>
+	
+	<!-- 인증번호 유효성 체크 (시간 유효성 X) -->
+	<select id="validateCertifyKey" parameterType="CertifyKeyVo" resultType="int">
+		SELECT COUNT(*) FROM CertificationEmail
+		WHERE userEmail = #{userEmail} AND certifyKey = #{certifyKey}
+	</select>
+	
+</mapper>
