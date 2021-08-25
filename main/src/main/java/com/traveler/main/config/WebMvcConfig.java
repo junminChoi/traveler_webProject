@@ -18,7 +18,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		log.info("Add Jwt Authentication Interceptor");
+		log.info("[Add Jwt Authentication Interceptor]");
 		
 		registry.addInterceptor(jwtAuthenticationInterceptor)
 				.addPathPatterns("/api/myinfo", "/api/signout");

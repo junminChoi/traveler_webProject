@@ -28,7 +28,9 @@ import com.traveler.main.vo.user.SignUpVo;
 import com.traveler.main.vo.user.UserVo;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -44,6 +46,7 @@ public class UserController {
 	
 	@PostMapping("/signup") /* 회원가입 */
 	public ResponseEntity<ResponseVo> signUp(@Validated @RequestBody SignUpVo signUpVo) throws Exception {
+		log.info("[/api/signup]");
 		
 		if(!userDetailService.checkMail(signUpVo.getUserEmail()))
 			return ResponseEntity.ok().body(new ResponseVo(400, "메일을 다시 확인해주세요"));
@@ -63,6 +66,7 @@ public class UserController {
 	
 	@PostMapping("/signin") /* 로그인 */
 	public ResponseEntity<Object> signIn(@Validated @RequestBody SignInVo signInVo) throws Exception {
+		log.info("[/api/signin]");
 		String object = userService.signIn(signInVo);
 		
 		if(object.equals("FAIL"))
@@ -77,6 +81,7 @@ public class UserController {
 	
 	@GetMapping("/myinfo") /* 마이페이지 */ /* 토큰 인증 */
 	public ResponseEntity<ResponseDataVo> myPage(HttpServletRequest request) throws Exception {
+		log.info("[/api/myinfo]");
 		String userEmail = (String) request.getAttribute("userEmail");
 		
 		UserVo userVo = userService.userInfo(userEmail);
@@ -91,6 +96,7 @@ public class UserController {
 	
 	@PostMapping("/signout") /* 로그아웃 */ /* 토큰 인증 */
 	public ResponseEntity<ResponseVo> signout(HttpServletRequest request) throws Exception {
+		log.info("[/api/signout]");
 		String userEmail = (String) request.getAttribute("userEmail");
 		
 		tokenService.removeToken(userEmail);
