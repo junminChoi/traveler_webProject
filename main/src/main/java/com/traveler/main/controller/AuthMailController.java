@@ -14,7 +14,9 @@ import com.traveler.main.vo.authentication.CertifyKeyVo;
 import com.traveler.main.vo.reponse.ResponseVo;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/auth")
@@ -24,6 +26,7 @@ public class AuthMailController {
 	
 	@PostMapping("/mail/{userEmail:.+}") /* 인증번호 메일 전송 및 재전송 */
 	public ResponseEntity<ResponseVo> sendMail(@PathVariable String userEmail) throws Exception {
+		log.info("[/api/auth/mail/{}]");
 		
 		if(authMailService.sendMail(userEmail))
 			return ResponseEntity.ok().body(new ResponseVo(200, "메일발송 성공"));
@@ -32,6 +35,7 @@ public class AuthMailController {
 	
 	@GetMapping("/valid") /* 인증번호 유효성 체크 */
 	public ResponseEntity<ResponseVo> validateTimeCertifyKey(@Validated @RequestBody CertifyKeyVo certifyKeyVo) throws Exception {
+		log.info("[/api/auth/valid]");
 		
 		if(authMailService.validateTimeCertifyKey(certifyKeyVo))
 			return ResponseEntity.ok().body(new ResponseVo(200, "메일인증 성공"));
