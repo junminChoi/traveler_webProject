@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.traveler.main.mapper.tripInfoMapper.tripInfoMapper;
 import com.traveler.main.vo.tripInfoVO.tripInfoVO;
+import com.traveler.main.vo.tripInfoVO.tripInfo_contentVO;
 
 @Service
 public class tripInfoService {
@@ -16,5 +17,8 @@ public class tripInfoService {
 	public List<tripInfoVO> getInfoData(){
 		return mapper.getInformation();
 	}
-
+	
+	public List<tripInfo_contentVO> getInfo_contentData(){
+		return mapper.getInformation_content();
+	}
 }

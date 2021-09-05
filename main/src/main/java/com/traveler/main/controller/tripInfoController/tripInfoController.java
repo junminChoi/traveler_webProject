@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.traveler.main.service.tripInfoService.tripInfoService;
 import com.traveler.main.vo.tripInfoVO.tripInfoVO;
+import com.traveler.main.vo.tripInfoVO.tripInfo_contentVO;
 
 @RestController
 public class tripInfoController {
@@ -17,10 +18,8 @@ public class tripInfoController {
 	@GetMapping("/test_tripinfo")
 	public List<tripInfoVO> returnTripInfo(){
 		List<tripInfoVO> information = service.getInfoData();
-		System.out.println(information.get(0).getTitle());
-		
-		
-		
 		return information;
 	}
+	
+
 }

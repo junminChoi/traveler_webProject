@@ -6,4 +6,7 @@
 		select * from TripInformation_main
 	</select>
 
+		<select id="getInformation_content" resultType="com.traveler.main.vo.tripInfoVO.tripInfoVO">
+		select * from TripInformation_content
+	</select>
 </mapper>
