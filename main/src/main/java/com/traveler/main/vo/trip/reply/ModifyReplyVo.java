@@ -11,29 +11,21 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Alias("TripCommentVo")
+@Alias("ModifyReplyVo")
 @AllArgsConstructor
 @NoArgsConstructor
-public class TripCommentVo {
-	
-	/* Foreign Key */
+public class ModifyReplyVo {
 	private String location;
-
 	private String userNickName;
-	
-	@NotNull
-	private String tempTime;
-	
-	private String content;
 	
 	@NotNull /* Primary Key */
 	private int commentID;
 
-	public TripCommentVo(String location, String content, @NotNull int commentID) {
+	public ModifyReplyVo(String location, @NotNull int commentID) {
 		this.location = location;
-		this.content = content;
 		this.commentID = commentID;
 		this.userNickName = "";
-		this.tempTime = "";
 	}
+	
+	
 }
