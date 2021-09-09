@@ -66,7 +66,6 @@ public class UserController {
 	
 	@PostMapping("/signin") /* 로그인 */
 	public ResponseEntity<Object> signIn(@Validated @RequestBody SignInVo signInVo) throws Exception {
-		log.info("[/api/signin]");
 		String object = userService.signIn(signInVo);
 		
 		if(object.equals("FAIL"))
@@ -76,6 +75,7 @@ public class UserController {
 		token.put("tokenType", TOKEN_TYPE);
 		token.put("accessToken", object);
 		
+		log.info("[Sign In] Mail= {}", signInVo.getUserEmail());
 		return ResponseEntity.ok().body(new TokenVo(200, "로그인 성공", token));
 	}
 	
@@ -96,11 +96,11 @@ public class UserController {
 	
 	@PostMapping("/signout") /* 로그아웃 */ /* 토큰 인증 */
 	public ResponseEntity<ResponseVo> signout(HttpServletRequest request) throws Exception {
-		log.info("[/api/signout]");
 		String userEmail = (String) request.getAttribute("userEmail");
 		
 		tokenService.removeToken(userEmail);
 		
+		log.info("[Sign Out] Mail= {}", userEmail);
 		return ResponseEntity.ok().body(new ResponseVo(200, "로그아웃 성공"));
 	}
 	

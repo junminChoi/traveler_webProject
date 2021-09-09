@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.traveler.main.service.trip.reply.TripReplyService;
 import com.traveler.main.vo.reponse.ResponseDataVo;
 import com.traveler.main.vo.reponse.ResponseVo;
+import com.traveler.main.vo.trip.reply.ModifyReplyVo;
 import com.traveler.main.vo.trip.reply.ReplyVo;
 import com.traveler.main.vo.trip.reply.TripCommentVo;
 
@@ -52,7 +53,38 @@ public class TripReplyController {
 		return ResponseEntity.ok().body(new ResponseVo(200, "SUCCESS"));
 	}
 	
-	/* 댓글 수정 */ /* 토근 인증 */
+	@GetMapping("/modify") /* 댓글 수정 (댓글 정보 불러오기) */ /* 토근 인증 */
+	public ResponseEntity<Object> replyInfo(HttpServletRequest request,
+													@RequestParam(value = "id") int replyId,
+													@RequestParam(value = "loc") String location) throws SQLException {
+		log.info("[Controller] [replyInfo] uri = /api/trip/modify?id={}&loc={}", replyId, location);
+		String userNickName = (String) request.getAttribute("userNickName");
+		
+		TripCommentVo tripCommentVo = tripReplyService.replyInfo(new ModifyReplyVo(location, userNickName, replyId));
+		if(Objects.isNull(tripCommentVo))
+			return ResponseEntity.ok().body(new ResponseVo(200, "댓글이 없습니다."));
+		return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", tripCommentVo));
+	}
 	
-	/* 댓글 삭제 */ /* 토근 인증 */
+	@PostMapping("/modify") /* 댓글 수정 (댓글 정보 업데이트) */ /* 토근 인증 */
+	public ResponseEntity<ResponseVo> modifyReplyInfo(HttpServletRequest request, @RequestBody TripCommentVo tripCommentVo) throws SQLException{
+		log.info("[Controller] [replyInfo] uri = /api/trip/modify");
+		
+		String userNickName = (String) request.getAttribute("userNickName");
+		tripCommentVo.setUserNickName(userNickName);
+		tripReplyService.modifyReplyInfo(tripCommentVo);
+		
+		return ResponseEntity.ok().body(new ResponseVo(200, "SUCCESS"));
+	}
+	
+	@PostMapping("/remove") /* 댓글 삭제 */ /* 토근 인증 */
+	public ResponseEntity<ResponseVo> removeReply(HttpServletRequest request, @RequestBody ModifyReplyVo modifyReplyVo) throws SQLException {
+		log.info("[Controller] [replyInfo] uri = /api/trip/remove");
+		
+		String userNickName = (String) request.getAttribute("userNickName");
+		modifyReplyVo.setUserNickName(userNickName);
+		tripReplyService.removeReply(modifyReplyVo);
+		
+		return ResponseEntity.ok().body(new ResponseVo(200, "SUCCESS"));
+	}
 }

@@ -14,11 +14,39 @@
 	<!-- 관광지 댓글 등록 -->
 	<insert id="addTripReply" parameterType="ReplyVo">
 		INSERT INTO TripComment (location, userNickName, tempTime, content)
-		AVLUES (#{location}, #{userNickName}, #{tempTime}, NOW())
+		VALUES (#{location}, #{userNickName}, NOW(), #{content})
 	</insert>
 	
+	<!-- 댓글 개수 증가 -->
+	<update id="addReplyCount" parameterType="String">
+		UPDATE TripData
+		SET viewCount = viewCount + 1
+		WHERE location = #{location}
+	</update>
+	
+	<!-- 댓글 개수 감소 -->
+	<update id="removeReplyCount" parameterType="String">
+		UPDATE TripData
+		SET viewCount = viewCount - 1
+		WHERE location = #{location}
+	</update>
+	
+	<!-- 조건에 맞는 댓글 정보 조회 -->
+	<select id="replyInfo" parameterType="modifyReplyVo" resultType="TripCommentVo">
+		SELECT * FROM TripComment
+		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+	</select>
+	
 	<!-- 관광지 댓글 수정 -->
-	<!-- <update id="modifyTripReply" >
-		
-	</update> -->
+	<update id="modifyReplyInfo" parameterType="TripCommentVo">
+		UPDATE TripComment
+		SET tempTime = NOW(), content = #{content}
+		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+	</update>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="removeReply" parameterType="ModifyReplyVo">
+		DELETE FROM TripComment
+		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+	</delete>
 </mapper>

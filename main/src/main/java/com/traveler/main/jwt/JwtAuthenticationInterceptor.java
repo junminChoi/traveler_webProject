@@ -37,6 +37,8 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
 			
 			return true;
 		}
+		
+		log.info("[Sign Out] [Token Expire] Token= {}", token);
 		throw new JwtException("유효하지 않은 토큰");
 	}
 
