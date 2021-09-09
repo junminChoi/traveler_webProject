@@ -32,7 +32,7 @@ public class UserDetailController {
 	
 	@GetMapping("/check/mail/{userEmail:.+}") /* 이메일 유효성 및 중복 체크 */
 	public ResponseEntity<ResponseVo> checkMail(@PathVariable @NotBlank @Email String userEmail) throws Exception {
-		log.info("[/api/user/check/mail/{}]");
+		log.info("[/api/user/check/mail/{}]", userEmail);
 		
 		if(!userDetailService.checkMail(userEmail))
 			return ResponseEntity.ok().body(new ResponseVo(400, "중복 메일"));
@@ -41,7 +41,7 @@ public class UserDetailController {
 	
 	@GetMapping("/check/nickname/{userNickName}") /* 닉네임 유효성 및 중복 체크 */
 	public ResponseEntity<ResponseVo> checkNickName(@PathVariable @NotBlank @Length(min = 2, max = 10) String userNickName) throws Exception {
-		log.info("[/api/user/check/nickname/{}]");
+		log.info("[/api/user/check/nickname/{}]", userNickName);
 		
 		if(!userDetailService.checkNickName(userNickName))
 			return ResponseEntity.ok().body(new ResponseVo(400, "중복 닉네임"));
@@ -59,7 +59,7 @@ public class UserDetailController {
 	
 	@PostMapping("/modify/password/{userEmail}") /* 비밀번호 변경(찾기) */
 	public ResponseEntity<ResponseVo> modifyPassword(@PathVariable String userEmail, @Validated @RequestBody PasswordVo passwordVo) throws Exception {
-		log.info("[/api/user/modify/password/{}]");
+		log.info("[/api/user/modify/password/{}]", userEmail);
 		
 		if(!userDetailService.checkPassword(passwordVo))
 			return ResponseEntity.ok().body(new ResponseVo(400, "비밀번호 불일치"));

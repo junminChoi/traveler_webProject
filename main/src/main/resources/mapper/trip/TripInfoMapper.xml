@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.traveler.main.mapper.trip.TripInfoMapper">
+	
+	<!-- 관광지 목록조회 (페이징) -->
+	<select id="inquireTripList" parameterType="PagingVo" resultType="TripListVo">
+		SELECT destinationTitle, pictureData, location, viewCount
+		FROM TripData
+		LIMIT #{startPage}, #{listCount}
+	</select>
+	
+	<!-- 관광지 상세정보 조회 -->
+	<select id="inquireTripInfo" parameterType="String" resultType="TripDataVo">
+		SELECT * FROM TripData
+		WHERE location = #{location}
+	</select>
+	
+	<!-- 관광지 총 개수 -->
+	<select id="tripTotalCount" resultType="int">
+		SELECT COUNT(*) FROM TripData
+	</select>
+	
+	<!-- 지역별 관광지 목록조회 (페이징) -->
+	<select id="inquireAreaTripList" parameterType="TripKategorieVo" resultType="TripListVo">
+		SELECT destinationTitle, pictureData, location, viewCount
+		FROM TripData
+		WHERE location LIKE CONCAT('%',#{kategorie},'%')
+		LIMIT #{pagingVo.startPage}, #{pagingVo.listCount}
+	</select>
+	
+	<!-- 지역별 관광지 총 개수 -->
+	<select id="areaTripTotalCount" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM TripData
+		WHERE location LIKE CONCAT('%',#{areaName},'%')
+	</select>
+</mapper>
