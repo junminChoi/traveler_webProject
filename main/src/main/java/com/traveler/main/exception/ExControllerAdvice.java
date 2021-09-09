@@ -1,5 +1,7 @@
 package com.traveler.main.exception;
 
+import java.sql.SQLException;
+
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.http.HttpStatus;
@@ -34,6 +36,12 @@ public class ExControllerAdvice {
 	@ExceptionHandler /* 유효하지 않은 토큰 예외처리 */
 	public ResponseEntity<ErrorVo> JwtExHandle(JwtException e) {
 		return ResponseEntity.ok().body(new ErrorVo(400, e.getMessage()));
+	}
+	
+	@ExceptionHandler /* DB 예외처리 */
+	public ResponseEntity<ErrorVo> SQLExceptionHandle(SQLException e){
+		log.error("[SQLException][{}] Message= {}", e.getClass().getSimpleName(), e.getMessage());
+		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorVo(500, "Server Error"));
 	}
 	
 	@ExceptionHandler /* 서버 예외처리 */

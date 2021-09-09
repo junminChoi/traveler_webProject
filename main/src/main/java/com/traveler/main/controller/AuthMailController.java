@@ -26,7 +26,7 @@ public class AuthMailController {
 	
 	@PostMapping("/mail/{userEmail:.+}") /* 인증번호 메일 전송 및 재전송 */
 	public ResponseEntity<ResponseVo> sendMail(@PathVariable String userEmail) throws Exception {
-		log.info("[/api/auth/mail/{}]");
+		log.info("[/api/auth/mail/{}]", userEmail);
 		
 		if(authMailService.sendMail(userEmail))
 			return ResponseEntity.ok().body(new ResponseVo(200, "메일발송 성공"));
