@@ -45,7 +45,7 @@ public class TripInfoController {
 	}
 	
 	@GetMapping("/info") /* 관광지 상세정보 조회 */
-	public ResponseEntity<Object> inquireTripInfo(@RequestParam(value="loc") String location) throws SQLException {
+	public ResponseEntity<Object> inquireTripInfo(@RequestParam(value="loc", required = false) String location) throws SQLException {
 		log.info("[Controller] [inquireTripInfo] uri= /api/trip/info?loc={}", location);
 		
 		TripDataVo tripDataVo = tripInfoService.inquireTripInfo(location);
@@ -56,7 +56,7 @@ public class TripInfoController {
 	}
 	
 	@GetMapping("/page/total") /* 관광지 리스트 총 페이지 개수 */
-	public ResponseEntity<ResponseDataVo> pageTotalCount(@RequestParam(value = "cnt") int listCount,
+	public ResponseEntity<ResponseDataVo> pageTotalCount(@RequestParam(value = "cnt", defaultValue = "10") int listCount,
 														 @RequestParam(value = "area", required = false, defaultValue = " ") String areaName) throws SQLException {
 		log.info("[Controller] [pageTotalCount] uri= /api/trip/page/total?cnt={}&area={}", listCount, areaName);
 		

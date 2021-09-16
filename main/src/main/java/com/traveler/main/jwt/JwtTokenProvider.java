@@ -30,12 +30,13 @@ public class JwtTokenProvider {
 	private final TokenService tokenService;
 	
 	@Value("${jwt.secret-key}")
-	private String secretKey;//"JwtAuthenticationTravelerSignInSecretKey";
+	private String secretKey;
 	
-	private static final long TOKEN_VALID_TIME = 30 * 60 * 1000L;
+	@Value("${jwt.header-key}")
+	private String headerKey;
 	
-	@Value("${jwt.authorization}")
-	private String HEADER_TOKEN_NAME;//"Authorization";
+	@Value("${jwt.valid-time}")
+	private long validTime;
 	
 	/* secret key 암호화 */
 	protected void init() {
@@ -49,7 +50,7 @@ public class JwtTokenProvider {
 		return Jwts.builder()
 				.setIssuer("Traveler") // 토큰 발급자
 				.setIssuedAt(now) // 토큰 발행 시간
-				.setExpiration(new Date(now.getTime() + TOKEN_VALID_TIME)) // 토큰 만료 시간
+				.setExpiration(new Date(now.getTime() + validTime)) // 토큰 만료 시간
 				.claim("userEmail", userVo.getUserEmail())
 				.claim("userNickName", userVo.getUserNickName())
 				.signWith(SignatureAlgorithm.HS256, secretKey) // 사용할 암호화 알고리즘, signature에 들어갈 secret
@@ -68,7 +69,7 @@ public class JwtTokenProvider {
 	
 	/* 헤더에서 토큰 추출 */
 	public String resolveToken(HttpServletRequest request, String type) {
-		Enumeration<String> headers = request.getHeaders(HEADER_TOKEN_NAME);
+		Enumeration<String> headers = request.getHeaders(headerKey);
 		
 		while (headers.hasMoreElements()) {
             String value = headers.nextElement();

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.traveler.main.mapper.festival.FestivalMapper">
+
+	<!-- 문화축제 리스트 조회 (페이징) -->
+	<select id="festivalList" parameterType="PagingVo" resultType="FestivalListVo">
+		SELECT cultureAndFestivalID AS festivalId,
+			   festivalTitle AS title,
+			   startDate,
+			   endDate,
+			   pictureData AS imageUrl
+		FROM cultureAndFestival
+		LIMIT #{startPage}, #{listCount}
+	</select>
+	
+	<!-- 문화축제 상세정보 조회 -->
+	<select id="festivalInfo" parameterType="FestivalInfoVo" resultType="FestivalVo">
+		SELECT cultureAndFestivalID AS festivalId,
+			   festivalTitle AS title,
+			   startDate,
+			   endDate,
+			   newsContent AS content,
+			   phoneNumber,
+			   homePageLocation AS homepage,
+			   pictureData AS imageUrl
+		FROM cultureAndFestival
+		WHERE cultureAndFestivalID = #{festivalId} AND festivalTitle = #{title}
+	</select>
+	
+	<!-- 문화축제 리스트 개수 -->
+	<select id="festivalTotalCount" resultType="int">
+		SELECT COUNT(*) FROM cultureAndFestival
+	</select>
+</mapper>
