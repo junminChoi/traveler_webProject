@@ -18,10 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class JwtAuthenticationInterceptor implements HandlerInterceptor {
 
-	private final JwtTokenProvider jwtTokenProvider;
-	
 	@Value("${jwt.type}")
 	private String TOKEN_TYPE;
+	
+	private final JwtTokenProvider jwtTokenProvider;
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
