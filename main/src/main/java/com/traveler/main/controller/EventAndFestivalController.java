@@ -35,7 +35,7 @@ public class EventAndFestivalController {
 	private final EventService eventService;
 	private final FestivalService festivalService;
 	
-	public boolean nullCheckObject(Object obj) {
+	private boolean nullCheckObject(Object obj) {
 		if(Objects.isNull(obj)) // null
 			return true;
 		return false;
