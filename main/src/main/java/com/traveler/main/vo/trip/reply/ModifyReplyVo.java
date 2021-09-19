@@ -16,15 +16,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ModifyReplyVo {
 	private String location;
-	private String userNickName;
+	private String nickName; // userNickName
 	
 	@NotNull /* Primary Key */
-	private int commentID;
+	private int replyId; //commentID;
 
-	public ModifyReplyVo(String location, @NotNull int commentID) {
+	public ModifyReplyVo(String location, @NotNull int replyId) {
 		this.location = location;
-		this.commentID = commentID;
-		this.userNickName = "";
+		this.replyId = replyId;
+		this.nickName = "";
 	}
 	
 	

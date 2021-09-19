@@ -13,8 +13,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserVo {
-	private String userEmail;
-	private String userNickName;
-	private String userPW;
+	private String mail; //userEmail;
+	private String nickName; //userNickName;
+	private String passwd; //userPW;
 	
 }

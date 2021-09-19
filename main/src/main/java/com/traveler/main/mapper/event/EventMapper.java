@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.traveler.main.vo.event.EventInfoVo;
 import com.traveler.main.vo.event.EventListVo;
 import com.traveler.main.vo.event.EventVo;
-import com.traveler.main.vo.trip.PagingVo;
+import com.traveler.main.vo.paging.PagingVo;
 
 @Mapper
 @Repository

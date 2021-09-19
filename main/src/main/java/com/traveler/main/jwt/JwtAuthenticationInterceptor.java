@@ -25,7 +25,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		log.info("Interceptor URI = {}", ((HttpServletRequest)request).getRequestURI());
+		//log.info("Interceptor URI = {}", ((HttpServletRequest)request).getRequestURI());
 		
 		String token = jwtTokenProvider.resolveToken(request, TOKEN_TYPE);
 		

@@ -17,10 +17,10 @@ public class PasswordVo {
 	@NotBlank
 	@Length(min = 8, max = 20)
 	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?])[A-Za-z[0-9]$@$!%*#?&]{8,20}$", message = "비밀번호 형식에 맞지 않습니다.")
-	private String userPW;
+	private String passwd;
 	
 	@NotBlank
 	@Length(min = 8, max = 20)
 	@Pattern(regexp = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?])[A-Za-z[0-9]$@$!%*#?&]{8,20}$", message = "비밀번호 형식에 맞지 않습니다.")
-	private String userPWchk;
+	private String passwdChk;
 }

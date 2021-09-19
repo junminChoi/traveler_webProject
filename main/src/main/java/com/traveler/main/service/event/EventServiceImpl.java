@@ -8,7 +8,7 @@ import com.traveler.main.mapper.event.EventMapper;
 import com.traveler.main.vo.event.EventInfoVo;
 import com.traveler.main.vo.event.EventListVo;
 import com.traveler.main.vo.event.EventVo;
-import com.traveler.main.vo.trip.PagingVo;
+import com.traveler.main.vo.paging.PagingVo;
 
 import lombok.RequiredArgsConstructor;
 

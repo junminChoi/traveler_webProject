@@ -2,7 +2,7 @@ package com.traveler.main.service.token;
 
 import org.springframework.stereotype.Service;
 
-import com.traveler.main.mapper.TokenMapper;
+import com.traveler.main.mapper.token.TokenMapper;
 import com.traveler.main.vo.token.TokenInfoVo;
 
 import lombok.RequiredArgsConstructor;

@@ -20,8 +20,8 @@
 	<!-- 비밀번호 변경 -->
 	<update id="modifyPassword" parameterType="SignInVo">
 		UPDATE Members
-		SET userPW = #{userPW}
-		WHERE userEmail = #{userEmail}
+		SET userPW = #{passwd}
+		WHERE userEmail = #{mail}
 	</update>
 	
 </mapper>

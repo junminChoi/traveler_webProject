@@ -51,8 +51,8 @@ public class JwtTokenProvider {
 				.setIssuer("Traveler") // 토큰 발급자
 				.setIssuedAt(now) // 토큰 발행 시간
 				.setExpiration(new Date(now.getTime() + validTime)) // 토큰 만료 시간
-				.claim("userEmail", userVo.getUserEmail())
-				.claim("userNickName", userVo.getUserNickName())
+				.claim("userEmail", userVo.getMail())
+				.claim("userNickName", userVo.getNickName())
 				.signWith(SignatureAlgorithm.HS256, secretKey) // 사용할 암호화 알고리즘, signature에 들어갈 secret
 				.compact();
 	}
