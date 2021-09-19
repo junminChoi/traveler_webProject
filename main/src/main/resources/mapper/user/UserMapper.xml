@@ -8,12 +8,15 @@
 	<!-- 회원가입 -->
 	<insert id="signUp" parameterType="UserVo">
 		INSERT INTO Members (userEmail, userNickName, userPW)
-		VALUES (#{userEmail}, #{userNickName}, #{userPW})
+		VALUES (#{mail}, #{nickName}, #{passwd})
 	</insert>
 	
 	<!-- 유저 정보 조회 -->
 	<select id="userInfo" parameterType="String" resultType="UserVo">
-		SELECT * FROM Members
+		SELECT userEmail AS mail,
+			   userNickName AS nickName,
+			   userPW AS passwd
+		FROM Members
 		WHERE userEmail = #{userEmail}
 	</select>
 	

@@ -15,12 +15,12 @@ public class ReplyVo {
 	/* Foreign Key */
 	private String location;
 	
-	private String userNickName;
+	private String nickName; // userNickName
 	private String content;
 	
 	public ReplyVo(String location, String content) {
 		this.location = location;
 		this.content = content;
-		this.userNickName = "";
+		this.nickName = "";
 	}
 }

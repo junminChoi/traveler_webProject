@@ -37,7 +37,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 	@Override /* 비밀번호 일치여부 체크 */
 	public boolean checkPassword(PasswordVo passwordVo) throws Exception {
 		
-		if(!passwordVo.getUserPW().equals(passwordVo.getUserPWchk()))
+		if(!passwordVo.getPasswd().equals(passwordVo.getPasswdChk()))
 			return false;
 		return true;
 	}
@@ -46,8 +46,8 @@ public class UserDetailServiceImpl implements UserDetailService {
 	public void modifyPassword(SignInVo user) throws Exception {
 		
 		SignInVo enUser = new SignInVo();
-		enUser.setUserEmail(user.getUserEmail());
-		enUser.setUserPW(passwordEncoder.encode(user.getUserPW()));
+		enUser.setMail(user.getMail());
+		enUser.setPasswd(passwordEncoder.encode(user.getPasswd()));
 		
 		userDetailMapper.modifyPassword(enUser);
 	}

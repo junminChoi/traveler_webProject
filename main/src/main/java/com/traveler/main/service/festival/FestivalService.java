@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.traveler.main.vo.festival.FestivalListVo;
 import com.traveler.main.vo.festival.FestivalVo;
-import com.traveler.main.vo.trip.PagingVo;
+import com.traveler.main.vo.paging.PagingVo;
 
 public interface FestivalService {
 

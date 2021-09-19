@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.traveler.main.vo.event.EventListVo;
 import com.traveler.main.vo.event.EventVo;
-import com.traveler.main.vo.trip.PagingVo;
+import com.traveler.main.vo.paging.PagingVo;
 
 public interface EventService {
 

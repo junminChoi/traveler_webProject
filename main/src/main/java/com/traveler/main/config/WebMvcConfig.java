@@ -19,7 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		log.info("Add Jwt Authentication Interceptor");
+		log.info("Interceptor = Jwt Authentication");
 		
 		registry.addInterceptor(jwtAuthenticationInterceptor)
 				.addPathPatterns("/api/myinfo",
@@ -36,3 +36,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
         		.allowedOrigins("http://localhost:3000");
 	}
 }
+// 코드 수정 완료

@@ -7,14 +7,19 @@
 
 	<!-- 관광지 댓글 조회 -->
 	<select id="tripReplyList" parameterType="String" resultType="TripCommentVo">
-		SELECT * FROM TripComment
+		SELECT location,
+			   userNickName AS nickName,
+			   tempTime AS dateTime,
+			   content,
+			   commentID AS replyId
+		FROM TripComment
 		WHERE location = #{location}
 	</select>
 	
 	<!-- 관광지 댓글 등록 -->
 	<insert id="addTripReply" parameterType="ReplyVo">
 		INSERT INTO TripComment (location, userNickName, tempTime, content)
-		VALUES (#{location}, #{userNickName}, NOW(), #{content})
+		VALUES (#{location}, #{nickName}, NOW(), #{content})
 	</insert>
 	
 	<!-- 댓글 개수 증가 -->
@@ -33,20 +38,25 @@
 	
 	<!-- 조건에 맞는 댓글 정보 조회 -->
 	<select id="replyInfo" parameterType="modifyReplyVo" resultType="TripCommentVo">
-		SELECT * FROM TripComment
-		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+		SELECT location,
+			   userNickName AS nickName,
+			   tempTime AS dateTime,
+			   content,
+			   commentID AS replyId
+		FROM TripComment
+		WHERE location = #{location} AND userNickName = #{nickName} AND commentID = #{replyId}
 	</select>
 	
 	<!-- 관광지 댓글 수정 -->
 	<update id="modifyReplyInfo" parameterType="TripCommentVo">
 		UPDATE TripComment
 		SET tempTime = NOW(), content = #{content}
-		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+		WHERE location = #{location} AND userNickName = #{nickName} AND commentID = #{replyId}
 	</update>
 	
 	<!-- 댓글 삭제 -->
 	<delete id="removeReply" parameterType="ModifyReplyVo">
 		DELETE FROM TripComment
-		WHERE location = #{location} AND userNickName = #{userNickName} AND commentID = #{commentID}
+		WHERE location = #{location} AND userNickName = #{nickName} AND commentID = #{replyId}
 	</delete>
 </mapper>

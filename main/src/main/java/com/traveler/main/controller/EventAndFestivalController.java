@@ -19,9 +19,9 @@ import com.traveler.main.vo.event.EventListVo;
 import com.traveler.main.vo.event.EventVo;
 import com.traveler.main.vo.festival.FestivalListVo;
 import com.traveler.main.vo.festival.FestivalVo;
-import com.traveler.main.vo.reponse.ResponseDataVo;
-import com.traveler.main.vo.reponse.ResponseVo;
-import com.traveler.main.vo.trip.PagingVo;
+import com.traveler.main.vo.paging.PagingVo;
+import com.traveler.main.vo.reponse.ResDataVo;
+import com.traveler.main.vo.reponse.ResVo;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +35,7 @@ public class EventAndFestivalController {
 	private final EventService eventService;
 	private final FestivalService festivalService;
 	
+	// 빈 오브젝트 확인
 	private boolean nullCheckObject(Object obj) {
 		if(Objects.isNull(obj)) // null
 			return true;
@@ -49,18 +50,21 @@ public class EventAndFestivalController {
 		log.info("URI = /api/{}/list?cnt={}&num={}", type, listCount, pageNumber);
 		
 		PagingVo pagingVo = new PagingVo(listCount, pageNumber);
+		Map<String, Object> map = new HashMap<>();
 		
 		if(type.equals("event")) { // 공연행사
 			List<EventListVo> eventListVo = eventService.eventList(pagingVo);
-			return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", eventListVo));
+			map.put("list", eventListVo);
+			return ResponseEntity.ok().body(new ResDataVo(200, "SUCCESS", map));
 		}
 		
 		if(type.equals("festival")) { // 문화축제
 			List<FestivalListVo> festivalListVo = festivalService.festivalList(pagingVo);
-			return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", festivalListVo));
+			map.put("list", festivalListVo);
+			return ResponseEntity.ok().body(new ResDataVo(200, "SUCCESS", map));
 		}
 		
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseVo(404, "FAIL"));
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResVo(404, "Not Found"));
 	}
 	
 	/* 문화축제, 공연행사 상세정보 조회 */
@@ -70,25 +74,31 @@ public class EventAndFestivalController {
 									   @RequestParam(value = "title", required = false) String title) throws Exception {
 		log.info("URI = /api/{}/info?id={}&title={}", type, id, title);
 		
+		Map<String, Object> map = new HashMap<>();
+		
 		if(type.equals("event")) { // 공연행사
 			EventVo eventVo = eventService.eventInfo(id, title);
-			if(!nullCheckObject(eventVo))
-				return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", eventVo));
+			if(!nullCheckObject(eventVo)) {
+				map.put("info", eventVo);
+				return ResponseEntity.ok().body(new ResDataVo(200, "SUCCESS", map));
+			}
 		}
 		
 		if(type.equals("festival")) { // 문화축제
 			FestivalVo festivalVo = festivalService.festivalInfo(id, title);
-			if(!nullCheckObject(festivalVo))
-				return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", festivalVo));
+			if(!nullCheckObject(festivalVo)) {
+				map.put("info", festivalVo);
+				return ResponseEntity.ok().body(new ResDataVo(200, "SUCCESS", map));
+			}
 		}
 		
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseVo(404, "FAIL"));
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResVo(404, "Not Found"));
 	}
 	
 	/* 문화축제, 공연행사 리스트 총 페이지 수 */
 	@GetMapping("/{type}/list/totalpage")
-	public ResponseEntity<ResponseDataVo> totalPageCount(@PathVariable("type") String type,
-												 		 @RequestParam(value = "cnt", defaultValue = "10") int listCount) throws Exception {
+	public ResponseEntity<ResDataVo> totalPageCount(@PathVariable("type") String type,
+												 	@RequestParam(value = "cnt", defaultValue = "10") int listCount) throws Exception {
 		log.info("URI = /api/{}/list/totalpage?cnt={}", type, listCount);
 		
 		int pageCount = 0;
@@ -100,6 +110,6 @@ public class EventAndFestivalController {
 		Map<String, Integer> map = new HashMap<>();
 		map.put("count", pageCount);
 		
-		return ResponseEntity.ok().body(new ResponseDataVo(200, "SUCCESS", map));
+		return ResponseEntity.ok().body(new ResDataVo(200, "SUCCESS", map));
 	}
 }

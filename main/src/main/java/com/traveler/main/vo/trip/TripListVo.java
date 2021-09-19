@@ -17,12 +17,12 @@ import lombok.Setter;
 public class TripListVo {
 	
 	@NotNull
-	private String destinationTitle;
+	private String title;		//destinationTitle
 	
-	private String pictureData;
+	private String imageUrl;	// pictureData
 	
 	@NotNull /* Primary Key */
-	private String location;
+	private String location;	// location
 	
-	private int viewCount;
+	private int replyCnt;		// viewCount
 }

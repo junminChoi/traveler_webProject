@@ -24,6 +24,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.csrf().disable()
 				.formLogin().disable()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		
 	}
 }
+// 코드 수정 완료

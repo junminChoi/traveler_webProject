@@ -19,21 +19,21 @@ public class TripCommentVo {
 	/* Foreign Key */
 	private String location;
 
-	private String userNickName;
+	private String nickName; //userNickName
 	
 	@NotNull
-	private String tempTime;
+	private String dateTime; //tempTime
 	
 	private String content;
 	
 	@NotNull /* Primary Key */
-	private int commentID;
+	private int replyId; // commentID
 
-	public TripCommentVo(String location, String content, @NotNull int commentID) {
+	public TripCommentVo(String location, String content, @NotNull int replyId) {
 		this.location = location;
 		this.content = content;
-		this.commentID = commentID;
-		this.userNickName = "";
-		this.tempTime = "";
+		this.replyId = replyId;
+		this.nickName = "";
+		this.dateTime = "";
 	}
 }

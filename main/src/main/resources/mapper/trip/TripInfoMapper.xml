@@ -7,14 +7,23 @@
 	
 	<!-- 관광지 목록조회 (페이징) -->
 	<select id="inquireTripList" parameterType="PagingVo" resultType="TripListVo">
-		SELECT destinationTitle, pictureData, location, viewCount
+		SELECT destinationTitle AS title,
+			   pictureData AS imageUrl,
+			   location,
+			   viewCount AS replyCnt
 		FROM TripData
 		LIMIT #{startPage}, #{listCount}
 	</select>
 	
 	<!-- 관광지 상세정보 조회 -->
-	<select id="inquireTripInfo" parameterType="String" resultType="TripDataVo">
-		SELECT * FROM TripData
+	<select id="inquireTripInfo" parameterType="String" resultType="TripVo">
+		SELECT destinationTitle AS title,
+			   pictureData AS imageUrl,
+			   location,
+			   viewCount AS replyCnt,
+			   content,
+			   phoneNumber AS phoneNum
+		FROM TripData
 		WHERE location = #{location}
 	</select>
 	
@@ -25,7 +34,10 @@
 	
 	<!-- 지역별 관광지 목록조회 (페이징) -->
 	<select id="inquireAreaTripList" parameterType="TripKategorieVo" resultType="TripListVo">
-		SELECT destinationTitle, pictureData, location, viewCount
+		SELECT destinationTitle AS title,
+			   pictureData AS imageUrl,
+			   location,
+			   viewCount AS replyCnt
 		FROM TripData
 		WHERE location LIKE CONCAT('%',#{kategorie},'%')
 		LIMIT #{pagingVo.startPage}, #{pagingVo.listCount}

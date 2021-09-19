@@ -2,7 +2,6 @@ package com.traveler.main.vo.weather;
 
 import org.apache.ibatis.type.Alias;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +13,6 @@ public class WeatherVo {
 	private String numOfRows;
 	private String dataType;
 	private String tmFc;
-	
 	private String stnId;
 	private String regId;
 	

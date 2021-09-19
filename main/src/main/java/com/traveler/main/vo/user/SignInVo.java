@@ -13,16 +13,16 @@ import lombok.Setter;
 public class SignInVo {
 	
 	@NotBlank
-	private String userEmail;
+	private String mail; //userEmail;
 	
 	@NotBlank
-	private String userPW;
+	private String passwd; //userPW;
 
 	public SignInVo() {}
 	
-	public SignInVo(@NotBlank String userEmail, @NotBlank String userPW) {
-		this.userEmail = userEmail;
-		this.userPW = userPW;
+	public SignInVo(@NotBlank String mail, @NotBlank String passwd) {
+		this.mail = mail;
+		this.passwd = passwd;
 	}
 	
 }
