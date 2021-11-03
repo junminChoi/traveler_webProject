@@ -1,0 +1,70 @@
+.MenuBar{
+    width: 1923px;
+    height: 65px;
+    left: 0px;
+    top: 117px;
+    background: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+}
+/* #kangwonNow{
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none; 
+} */
+.rowInMenu{
+    margin-top: 25px;
+    width : 1920px;
+    height : 65px;
+}
+
+#MenuContentsInRow{
+    display: inline-block;
+    margin-left: 70px;
+    width : 400px;
+    height: 65px;
+    color : white;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+}
+
+.Menucontents{
+    display: inline-block;
+    margin-left: 70px;
+    width : 400px;
+    height : 65px;
+    text-align: center;
+    color : white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Noto Sans;
+    font-style: normal;
+    line-height: 60px;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width : 1923px;
+    height : 400px;
+    background: rgba(0, 0, 0, 0.6);
+    top : 65px;
+    display: none;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+    display: block;
+}
+.dropdown-content a:hover{
+    background-color: rgba(255,255,255,0.3);
+}
+.MenuBar:hover .dropdown-content {
+    display: block;
+}
+

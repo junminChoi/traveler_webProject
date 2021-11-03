@@ -1,0 +1,165 @@
+
+.HeadLine{
+    display: inline-block;
+    position: absolute;
+    width: 1923px;
+    height: 117px;
+    top: 0px;
+    background:white;
+}
+
+
+
+#Logo{
+    position: relative;
+    width : 300px;
+    height : 100px;
+    top : 10px;
+    left : 120px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 43px;
+    display: flex;
+    align-items: center;
+    color : #053C4A;
+    background-image: url('../../../images/mainPage/home_menuBar/로고-4차.png');
+    background-size: cover ;
+
+    
+}
+
+
+
+#myPage{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top : -200px;
+    left : 1855px; 
+    background-image: url("../../../images/mainPage/home_menuBar/human_logo.png");
+    background-size: cover;
+}
+
+#logIn{
+    position: relative;
+    width: 110px;
+    height: 60px;
+    top : -152px;
+    left : 1731px;
+    background-color:white;
+
+
+
+    background:url('../../../images/mainPage/home_menuBar/login_button.png');
+    background-size: cover;
+}
+
+#search{
+    position: relative;
+    width: 224.74px;
+    height: 32.43px;
+    left : 1477px;
+    top : -100px;
+    border: 2px solid #053C4A;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+}
+
+#weatherCast{
+    position: relative;
+    width: 150px;
+    height: 60px;
+    left : 1325px;
+    top : -55px;
+
+
+    background:url("../../../images/mainPage/home_menuBar/weather_logo.png");
+    background-size: cover;
+
+    font-family: Noto Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+   
+
+    text-align: center;
+
+    color: #053C4A;
+
+}
+
+
+/* 
+#HeadLine {
+    width: 100vw;
+    height: 117px;
+}
+
+#Logo {
+    display: inline-block;
+    width: 50vw;
+    height: 117px;
+    position: relative;
+
+
+}
+
+#logo-img {
+    width : 242px;
+    height : 43px;
+    display: inline-block;
+    background-image: url("http://placehold.it/242x43");
+    position: absolute;
+    left:153px; top: 40px;
+}
+
+#utilities {
+    display: inline-block;
+    width: 50vw;
+    height: 117px;
+    position: relative;
+
+
+}
+
+#mypage {
+    width : 27px;
+    height : 32px;
+    display: inline-block;
+    background-image: url("http://placehold.it/27x32");
+    position: absolute;
+    top: 46px; right: 94px;
+}
+
+#login {
+    width : 90px;
+    height : 32px;
+    display: inline-block;
+    background-image: url("http://placehold.it/90x32");
+    position: absolute;
+    top: 46px; right: 145px;
+}
+
+#search {
+    width : 225px;
+    height : 32px;
+    display: inline-block;
+    position: absolute;
+    top: 46px; right: 264px;
+    
+    
+    background-color: red;
+}
+
+#weatherCast {
+    width : 99px;
+    height : 28px;
+    display: inline-block;
+    background-image: url("http://placehold.it/99x28");
+    position: absolute;
+    top: 48px; right: 518px;
+} */

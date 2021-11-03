@@ -1,0 +1,81 @@
+
+.BestTripcontents{
+    position: relative;
+    width: 1923px;
+    height: 808px;
+    left: 0px;
+
+    background: rgba(0, 0, 0, 0.05);
+}
+
+
+#bestTripQuote{
+    position: relative;
+    top : 70px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 43px;
+    text-align: center;
+
+    color: #000000;
+    padding: 0 5em;
+}
+
+.bestTripBox{
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    background-color: #151515;
+    background-size: 100%;
+    
+}
+
+#bestTrip1{
+    width: 20em;
+    height: 10em;
+    margin-top: 5em;
+    z-index: 1;
+    background-image: url('../../../images/mainPage/bestTrip/image/양양_낙산사.jpg');
+    /* background-image: url('../../image/bestTrip/양양_낙산사.jpg'); */
+}
+
+#bestTrip2{
+    width: 26em;
+    height: 13em;
+    margin-top: 4em;
+    margin-left: 3em;
+    z-index: 2;
+    background-image: url('../../../images/mainPage/bestTrip/image/양양_서피비치.jpg');
+    /* background-image: url('../../image/bestTrip/양양_서피비치.jpg'); */
+}
+
+#bestTrip3{
+    width: 34em;
+    height: 17em;
+    margin-top: 2em;
+    margin-left: 10em;
+    z-index: 3;
+    background-image: url('../../../images/mainPage/bestTrip/image/강릉_경포호.jpg');
+    /* background-image: url('../../image/bestTrip/강릉_경포호.jpg'); */
+}
+
+#bestTrip4{
+    width: 26em;
+    height: 13em;
+    margin-top: 4em;
+    margin-left: 26em;
+    z-index: 2;
+    background-image: url('../../../images/mainPage/bestTrip/image/대관령_양떼목장.jpg');
+    /*background-image: url('../../image/bestTrip/대관령_양떼목장.jpg');*/
+}
+
+#bestTrip5{
+    width: 20em;
+    height: 10em;
+    margin-top: 5em;
+    margin-left: 35em;
+    z-index: 1;
+    background-image: url('../../../images/mainPage/bestTrip/image/강릉_경포호.jpg');
+}

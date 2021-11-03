@@ -1,0 +1,135 @@
+.Tripcontents{
+    position: relative;
+    height : 1500px;
+    width: 100%;
+}
+button{
+    position: relative;
+    align-content: center;
+    margin-left: 20px;
+    width : 40px;
+    height : 40px;
+}
+#quote{
+    position: relative;
+    left : 270px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 52px;
+    text-align: right;
+    
+    color: #4F4F4F;
+}
+
+#pagebtnsinTripComp{
+    position: relative;
+    top : 400px;
+    left :23px;
+    width: 100%;
+}
+
+#row1{
+    top : 180px;
+    position: relative;
+    display: inline-block;
+    height : 487px;
+    width : 100%;
+    
+
+
+}
+
+#tPlace0{
+    display: inline-block;
+    position: relative;
+    top : 0px;
+    margin-left : 267px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace1{
+    display: inline-block;
+    position: relative;
+    top : 0px;
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace2{
+    display: inline-block;
+    position: relative;
+    top : 0px;
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace3{
+    display: inline-block;
+    position: relative;
+
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+#row2{
+    top : 256px;
+    position: relative;
+    display: inline-block;
+    height : 487px;
+    width : 100%;
+    
+
+
+}
+
+#tPlace4{
+    display: inline-block;
+    position: relative;
+
+    margin-left : 267px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace5{
+    display: inline-block;
+    position: relative;
+
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace6{
+    display: inline-block;
+    position: relative;
+
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+#tPlace7{
+    display: inline-block;
+    position: relative;
+
+    margin-left : 49px;
+    width: 311px;
+    height: 487px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}

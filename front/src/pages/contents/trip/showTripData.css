@@ -1,0 +1,131 @@
+#detail{
+    position: relative;
+    /* background-color: blanchedalmond; */
+    width : 1392px;
+    height : 2400px;
+    top : 500px;
+    left : 264px;
+}
+#detailHead{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 70px;
+
+    color: #4F4F4F;
+    width : 1392px;
+    height : 70px;
+
+    border-bottom: 2px solid #000000;
+}
+
+#detailTitle{
+    width: 1392px;
+    height: 280px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 240px;
+    text-align: center;
+
+    color: #4F4F4F;
+}
+
+#pic{
+    width : 1392px;
+    height : 570px;
+}
+#placeImg{
+
+    left : 118px;
+    position: relative;
+    width : 1154px;
+    height : 570px;
+    background:black;
+    background: url("../../../images/tripPlacePage/HJPO.jpg.crdownload");
+    background-size: cover;
+}
+
+#contentText{
+    margin-left : 118px;
+    margin-top : 113px;
+    width : 1152px;
+    height : 485px;
+    background: rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    line-height: 240px;
+    text-align: center;
+}
+#detAndLoc{
+    margin-top : 90px;
+}
+
+#detailInfo{
+    display: inline-block;
+    margin-left: 118px;
+    width : 552px;
+    height :370px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    /* identical to box height */
+
+
+color: #5682AB;
+}
+#location{
+    position: absolute;
+    left : 722px;
+    top : 1609px;
+    width : 552px;
+    height :370px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    /* identical to box height */
+
+
+    color: #5682AB;
+}
+
+#innerBoxL{
+    margin-top : 14px;
+    width: 552px;
+    height: 370px;
+    border: 1px solid #5682AB;
+    box-sizing: border-box;
+}
+#innerBoxR{
+    position: absolute;
+    margin-top : 14px;
+    left : -5px;
+    width: 552px;
+    height: 370px;
+    border: 1px solid #5682AB;
+    box-sizing: border-box;
+    background-image: url('http://placehold.it/552x370');
+}
+#lines{
+    width : 550px;
+    height : 40px;
+    margin-top: 18px;
+}
+#line1{
+    display: inline-block;
+    height : 40px;
+    width : 130px;
+    text-align: center;
+    font-size: 16px;
+}
+.responses{
+    margin-left: 10px;
+    display: inline-block;
+    width : 400px;
+    font-size: 16px;
+}

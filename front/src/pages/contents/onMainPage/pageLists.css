@@ -1,0 +1,54 @@
+.icons{
+    height: 184px;
+    width : 1923px;
+}
+
+#eventAndFestival{
+    display: inline-block;
+    position: relative;
+    width: 184px;
+    height: 184px;
+    margin-left : 365px;
+    background : url("../../../images/mainPage/home_directBtn/page_button1.png");
+    background-size: cover;
+}
+
+#tripPlaceNearby{
+    display: inline-block;
+    position: relative;
+    width: 184px;
+    height: 184px;
+    margin-left: 72px;
+    background : url("../../../images/mainPage/home_directBtn/page_button2.png");
+    background-size: cover;
+}
+
+#tripPlacebyArea{
+    display: inline-block;
+    position: relative;
+    width: 184px;
+    height: 184px;
+    margin-left: 72px;
+    background : url("../../../images/mainPage/home_directBtn/page_button3.png");
+    background-size: cover;
+}
+
+#tripPlaceRecom{
+    display: inline-block;
+    position: relative;
+    width: 184px;
+    height: 184px;
+    margin-left: 72px;
+    background : url("../../../images/mainPage/home_directBtn/page_button4.png");
+    background-size: cover;
+}
+
+#weatherAnnounce{
+    display: inline-block;
+    position: relative;
+    width: 184px;
+    height: 184px;
+    margin-left: 72px;
+    background : url("../../../images/mainPage/home_directBtn/page_button5.png");
+    background-size: cover;
+}

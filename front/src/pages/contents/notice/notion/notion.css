@@ -1,0 +1,25 @@
+#notionList{
+    position: relative;
+    width: 669px;
+    height: 250px;
+    left: 987px;
+    top : -420px;
+
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+#notionQuote{
+    position: relative;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+/* identical to box height */
+    text-align: left;
+    color: #4F4F4F;
+    margin-left: 50px;
+    top : 20px;
+}

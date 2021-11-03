@@ -1,0 +1,16 @@
+#banner{
+    position: relative;
+    width: 669px;
+    height: 250px;
+    left: 987px;
+    top : -460px;
+
+    background: url("../../../../images/notice/banner/banner2.jpg");
+    background-size: cover;
+    border-radius: 20px;
+
+    text-align: center;
+}
+#banner :hover{
+    cursor: pointer;
+}

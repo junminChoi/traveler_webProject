@@ -1,0 +1,113 @@
+
+
+/*여행 정보 게시글의 div태그 범위*/
+#TripInformation{
+    position: absolute;
+    top : 2831px;
+    width : 1931px;
+    height : 623px;
+    padding: 3em 10em ;
+    display: inline-block;
+}
+#TripInfoTitle{
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    width: 40em;
+    text-align: center;
+    padding: 0em 10em 3em 10em;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/**/
+#weatherComp{
+    position: absolute;
+    width: 1931px;
+    height: 955px;
+    left: -11px;
+    top: 3554px;
+}
+
+#NoticeSection{
+    position: absolute;
+    width: 672px;
+    height: 565px;
+    top: 2113px;
+
+}
+
+#pagelist{
+    position: absolute;
+    top: 1809px;
+}
+
+#Header{
+    width: 100vw;
+    height: 63px;
+}
+
+#searchInfo{
+    position: absolute;
+    top : 4454px;
+}
+
+
+#infoBox1{
+    width: 15em;
+    height: 25em;
+    background : url('../images/mainPage/tripInfo/surfyybeach.jpg'), rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#infoBox2{
+    left: 30em;
+    width: 15em;
+    height: 25em;
+    background : url('../images/mainPage/tripInfo/night.jpg'),rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#infoBox3{
+    left: 30em;
+    width: 15em;
+    height: 25em;
+    background : url('../images/mainPage/tripInfo/pasta.jpg'), rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#infoBox4{
+    right: 30em;
+    width: 15em;
+    height: 25em;
+    background : url('../images/mainPage/tripInfo/history.jpg'),rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+
+.info{
+    float: left;
+    margin: 0 5em;
+    /* position: absolute; */
+    width: 13em;
+    height: 28em;
+    /* background-size: 100%; */
+    padding: 0.1em;
+    /* height: 30em; */
+    box-shadow: 10px 10px 5px 5px #606060;
+
+}
+
+.info_inner{
+    margin: 0.5em;
+    border: 1px solid white;
+    width: 90%;
+    height: 24%;
+    text-align: center;
+    color: rgb(238, 235, 235);
+    font-size: 20px;
+    font-weight: 400;
+    padding: 7em 0;
+}

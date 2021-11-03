@@ -1,0 +1,78 @@
+/*여행 예보 회색 배경화면 부분*/
+.weatherConsole{
+    width : 600px;
+    height: 516px;
+    position: relative;
+    left: 690px;
+    top : 410px;
+
+    color: #FFFFFF;
+    /* background: rgba(0, 0, 0, 0.22);
+    background-size: cover;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+
+}
+
+#east{
+    border-radius: 10px;
+    top : 270px;
+    left: 900px;
+    background : rgba(0, 0, 0, 0.1);
+    color:  rgba(255, 255, 255, 0.8);
+}
+#west{
+    border-radius: 10px;
+    top : 270px;
+    left : 920px;
+    background : rgba(0, 0, 0, 0.1);
+    color:  rgba(255, 255, 255, 0.8);
+}
+/*바탕화면*/
+#weatherDIV{
+    width: 100vw;
+    height: 1000px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../images/background_img/weather_bg_3.png");
+    background-size: cover;
+}
+
+/* "#강원여행이 알려주는 당신을 위한 여행예보" 문구 부분 div*/
+#sharpQuete{
+    color: white;
+    
+    position:relative;
+    top : 90px;
+    width : 380px;
+    height : 104px;
+    left : 580px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 52px;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#weathertable{
+    border : 0px;
+    text-align: center;
+}
+#weathertable > tr{
+    height : 40px;
+}
+
+.date{
+    width : 140px;
+}
+.weather{
+    width : 80px;
+    
+}
+.temp{
+    width : 230px;
+}

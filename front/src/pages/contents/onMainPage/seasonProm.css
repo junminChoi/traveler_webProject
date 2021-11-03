@@ -1,0 +1,18 @@
+.seasonPromotionPhoto{
+    position: relative;
+    width: 1923px;
+    height: 772px;
+    left: 0px;
+    top: 29px;
+    z-index: -1;
+    background : url("../../../images/background_img/home_main.jpg");
+    
+}
+#seasonprominfo{
+    position: relative;
+    width: 1923px;
+    height: 772px;
+    left: 0px;
+    top: 29px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}

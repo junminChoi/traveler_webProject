@@ -1,0 +1,10 @@
+#weatherInformations{
+    position: absolute;
+    width: 1931px;
+    height: 955px;
+    left: 0px;
+    top: 158px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("");
+    
+}
