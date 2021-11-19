@@ -66,3 +66,6 @@ Data.go.kr에서 각종 공연행사, 문화축제, 여행지에 대한 정보�
 모든 자바프로젝트의 동작은 APACHE 서버를 통해 이루어졌으며, 데이터의 통신은 API방식으로 주고받았습니다.<br> 
 웹 프로젝트의 디자인을 위해 디자이닝 툴(figma)를 사용하여 웹 디자인을 했습니다.<br>
 React를 기반으로 axios를 통해 백엔드의 API를 받아왔습니다. Component형식의 페이지 구성을 위해 React-router-dom을 사용하였고. 증빙자료와 같이 구조적인 웹 프로젝트를 구현하였습니다.<br>
+
+**[시연 영상]**
+https://www.youtube.com/watch?v=Yf1uLdMGsho
